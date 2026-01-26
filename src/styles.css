@@ -1,0 +1,44 @@
+/* Import a clean, readable system font (Inter) from Google Fonts and apply it globally.
+	 If you prefer not to use an external import, tell me and I can switch to a local or
+	 system-only font stack. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+	--font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	--text-color: #0f172a; /* slate-900 */
+	--muted-color: #475569; /* slate-600 */
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: var(--font-sans);
+	color: var(--text-color);
+	background: #ffffff;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 1.45;
+	font-size: 16px;
+}
+
+/* sensible defaults for text elements */
+h1, h2, h3, h4, h5, h6 {
+	color: var(--text-color);
+	margin: 0 0 0.35rem 0;
+	font-weight: 600;
+}
+
+p {
+	color: var(--muted-color);
+	margin: 0 0 1rem 0;
+}
+
+/* Small helper for visually-muted text */
+.muted {
+	color: var(--muted-color);
+}
+
+

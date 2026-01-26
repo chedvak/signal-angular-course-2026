@@ -1,0 +1,61 @@
+main{
+    margin: 20px;
+    padding: 20px;
+}
+.user-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.user-list li {
+	margin: 0.25rem 0;
+	padding: 10px;
+}
+
+/* Layout classes for app content */
+.content {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+.left-side {
+	flex: 0 0 250px;
+	min-height: 400px; /* ensure it has some height */
+	padding: 1rem;
+}
+
+.divider {
+	width: 1px;
+	background: rgba(16,24,40,0.1);
+	margin: 0 0.5rem;
+	flex-shrink: 0;
+}
+
+.right-side {
+	flex: 1;
+	padding: 1rem;
+	min-height: 400px;
+}
+
+@media (max-width: 768px) {
+	.content {
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.left-side {
+		flex: none;
+		width: 100%;
+	}
+
+	.divider {
+		width: 100%;
+		height: 1px;
+		margin: 0.5rem 0;
+	}
+}

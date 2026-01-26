@@ -1,0 +1,44 @@
+/* ensure the pill button lays out its contents (avatar + name) */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-pill img {
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  background: #e2e8f0; /* light gray placeholder */
+  display: inline-block;
+  object-fit: cover;
+}
+
+.btn-pill .user-name {
+  font-weight: 600;
+  color: #4f46e5; /* indigo-600 */
+  font-size: 1.1rem;
+}
+
+.btn-pill {
+  padding: 0.5rem 1.2rem;
+  border-radius: 9999px;
+  border: 0;
+  background: rgba(79,70,229,0.08); /* light indigo tint */
+  color: #4f46e5; /* indigo-600 */
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.08s ease;
+  width: 200px; /* fixed width to prevent resizing based on name length */
+  justify-content: flex-start; /* align content to the left */
+}
+
+.btn-pill:hover {
+  background: rgba(79,70,229,0.16);
+  transform: translateY(-1px);
+}
+
+.btn-pill:active {
+  transform: translateY(0);
+}

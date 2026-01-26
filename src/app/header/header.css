@@ -1,0 +1,49 @@
+/* Header styles: simple, responsive, and lightweight */
+.app-header {
+	padding: 1.5rem 1.5rem;
+	border-bottom: 1px solid rgba(16,24,40,0.06);
+	background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.9));
+}
+
+.brand {
+	max-width: 1100px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+}
+
+.logo {
+	width: 72px;
+	height: 72px;
+	flex: 0 0 72px;
+}
+
+.brand-text h1 {
+	margin: 0;
+	font-size: 1.5rem;
+	color: #0f172a; /* slate-900 */
+	font-weight: 600;
+}
+
+.brand-text .lead {
+	margin: 0.2rem 0 0 0;
+	color: #475569; /* slate-600 */
+	font-size: 1.1rem;
+}
+
+@media (max-width: 520px) {
+	.brand {
+		gap: 1rem;
+	}
+
+	.brand-text h1 {
+		font-size: 1.25rem;
+	}
+
+	.logo {
+		width: 56px;
+		height: 56px;
+		flex: 0 0 56px;
+	}
+}

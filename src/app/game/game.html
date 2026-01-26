@@ -1,0 +1,30 @@
+<section class="game" role="application" aria-label="Click target game">
+  <div class="game-header">
+    <div class="info">
+      <div class="score">Score: {{ score() }}</div>
+      <div class="timer">Time: {{ timeLeft() }}s</div>
+    </div>
+
+    <div class="controls">
+      <button class="btn-pill" type="button" (click)="onClickAction()">{{ buttonLabel() }}</button>
+    </div>
+  </div>
+
+  <div class="grid" role="grid">
+    @for(cell of cells; track $index) {
+    <button
+      class="cell"
+      role="gridcell"
+      (click)="hit($index)"
+      [class.active]="active() === $index"
+      [attr.aria-pressed]="active() === $index"
+    >
+      @if(active() === $index) {
+      <span class="dot"></span>
+      }
+    </button>
+    }
+  </div>
+
+  <p class="muted">Click the moving target to score points. Faster clicks score more!</p>
+</section>
