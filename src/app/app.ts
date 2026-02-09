@@ -5,10 +5,11 @@ import { User } from './user/user';
 import { Game } from './game/game';
 import { Tasks } from './tasks/tasks';
 import { USERS } from './fake_users';
+import { SignalsDemoComponent } from './signals-demo/signals-demo.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, User, Game, Tasks],
+  imports: [RouterOutlet, Header, User, Game, Tasks, SignalsDemoComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

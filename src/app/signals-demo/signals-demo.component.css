@@ -1,0 +1,20 @@
+.demo {
+  padding: 1rem;
+  background: linear-gradient(180deg, #e9f5ec, #d7efe0);
+  border-radius: 8px;
+  color: #184d23;
+  max-width: 36rem;
+}
+button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.7rem;
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+input {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.4rem;
+}

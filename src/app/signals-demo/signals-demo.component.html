@@ -1,0 +1,15 @@
+<div class="demo">
+  <h3>Signals demo</h3>
+
+  <p>Count: {{ count() }}</p>
+  <p>Double (computed): {{ double() }}</p>
+  <button (click)="increment()">Increment</button>
+
+  <hr />
+
+  <label>
+    Name:
+    <input [value]="name()" (input)="setName($any($event.target).value)" />
+  </label>
+  <p>Hello, {{ name() }}!</p>
+</div>
