@@ -4,15 +4,18 @@
   <div class="content">
     <div class="left-side">
       <ul class="user-list">
-        <li>
-          <app-user
-            [name]="users[0].name"
-            [avatar]="users[0].avatar"
-            [id]="users[0].id"
-            (userClicked)="onUserSelected($event)"
-          ></app-user>
-        </li>
-        <li>
+        @for (user of users; track user.id) {
+          <li>
+            <app-user
+              [name]="user.name"
+              [avatar]="user.avatar"
+              [id]="user.id"
+              [isSelected]="selectedUser()?.id === user.id"
+              (userClicked)="onUserSelected($event)"
+            ></app-user>
+          </li>
+        }
+        <!-- <li>
           <app-user
             [name]="users[1].name"
             [avatar]="users[1].avatar"
@@ -51,11 +54,15 @@
             [id]="users[5].id"
             (userClicked)="onUserSelected($event)"
           ></app-user>
-        </li>
+        </li> -->
       </ul>
     </div>
     <div class="right-side">
-      <p>{{ selectedUser()?.name }} tasks</p>
+      @if (selectedUser() !== null) {
+        <app-tasks [userName]="selectedUser()!.name" [userId]="selectedUser()!.id"></app-tasks>
+      } @else {
+        <p class="select-user-message">Select a user to view their tasks</p>
+      }
     </div>
   </div>
 </main>

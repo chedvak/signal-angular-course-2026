@@ -1,0 +1,18 @@
+<div class="task-container">
+  <div class="task-header">
+    <h2>{{ userName() }}'s Tasks</h2>
+    <button class="add-task-btn" (click)="addTask()">Add Tasks</button>
+  </div>
+  
+  <div class="task-list">
+    @if(usersTask().length === 0) {
+      <p class="empty-message">No tasks yet</p>
+    } @else {
+      <ul>
+        @for(task of usersTask(); track task.id) {
+          <li><app-task [task]="task" (taskCompleted)="onTaskCompleted($event)"></app-task></li>
+        }
+      </ul>
+    }
+  </div>
+</div>

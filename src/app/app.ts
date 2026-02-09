@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from './header/header';
 import { User } from './user/user';
 import { Game } from './game/game';
+import { Tasks } from './tasks/tasks';
 import { USERS } from './fake_users';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, User, Game],
+  imports: [RouterOutlet, Header, User, Game, Tasks],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

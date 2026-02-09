@@ -23,19 +23,28 @@
 .btn-pill {
   padding: 0.5rem 1.2rem;
   border-radius: 9999px;
-  border: 0;
-  background: rgba(79,70,229,0.08); /* light indigo tint */
+  border: 2px solid #4f46e5;
+  background: rgba(79, 70, 229, 0.08); /* light indigo tint */
   color: #4f46e5; /* indigo-600 */
+  border-color: #4f46e5;
+  background-color: white;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.18s ease, transform 0.08s ease;
+  transition:
+    background 0.18s ease,
+    transform 0.08s ease;
   width: 200px; /* fixed width to prevent resizing based on name length */
   justify-content: flex-start; /* align content to the left */
 }
 
 .btn-pill:hover {
-  background: rgba(79,70,229,0.16);
+  background: rgba(79, 70, 229, 0.16);
+  transform: translateY(-1px);
+}
+
+.btn-pill-selected {
+  background: rgba(79, 70, 229, 0.16);
   transform: translateY(-1px);
 }
 

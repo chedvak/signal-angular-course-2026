@@ -1,0 +1,10 @@
+<div>
+  <h3>{{ task().title }}</h3>
+
+  <p><strong>Time:</strong> {{ task().dueDate }}</p>
+
+  <p>{{ task().summary }}</p>
+
+  <button class="add-task-btn" (click)="onClickCompleteTask()">Mark as Complete</button>
+</div>
+`

@@ -1,4 +1,4 @@
-<button class="btn-pill"  (click)="onUserClicked()">
+<button class="btn-pill" [class.btn-pill-selected]="isSelected()" (click)="onUserClicked()">
   <img src="{{imgAvatar()}}" alt="{{name()}} avatar" width="28" height="28" />
   <span class="user-name">{{name()}}</span>
 </button>

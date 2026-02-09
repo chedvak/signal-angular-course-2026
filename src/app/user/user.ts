@@ -10,6 +10,7 @@ export class User {
   name = input.required<string>();
   avatar = input.required<string>();
   id = input.required<string>();
+  isSelected = input.required<boolean>();
   userClicked = output<string>();
 
   imgAvatar = computed(() => {
