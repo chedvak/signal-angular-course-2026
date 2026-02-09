@@ -1,4 +1,5 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input, output, signal } from '@angular/core';
+import { USERS } from '../fake_users';
 
 @Component({
   selector: 'app-user',
@@ -6,7 +7,16 @@ import { Component, input } from '@angular/core';
   styleUrls: ['./user.css'],
 })
 export class User {
-  readonly name = 'Jane Doe';
+  name = input.required<string>();
+  avatar = input.required<string>();
+  id = input.required<string>();
+  userClicked = output<string>();
 
-  name1 = input('')
+  imgAvatar = computed(() => {
+    return `assets/users/${this.avatar()}`;
+  });
+
+  onUserClicked(){
+    this.userClicked.emit(this.id());
+  }
 }
