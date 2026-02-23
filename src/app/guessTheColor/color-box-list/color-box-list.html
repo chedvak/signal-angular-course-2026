@@ -1,0 +1,5 @@
+<div class="list-container">
+    @for(color of colors; track color) {
+        <app-color-box  [color]="color" [isCorrect]="color === colorToGuess"/>
+    }
+</div>

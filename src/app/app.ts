@@ -6,10 +6,11 @@ import { Game } from './game/game';
 import { Tasks } from './tasks/tasks';
 import { USERS } from './fake_users';
 import { SignalsDemoComponent } from './signals-demo/signals-demo.component';
+import { GameContainer } from './guessTheColor/game-container/game-container';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, User, Game, Tasks, SignalsDemoComponent],
+  imports: [RouterOutlet, Header, User, Game, Tasks, SignalsDemoComponent, GameContainer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
