@@ -1,4 +1,4 @@
-<!-- <app-header></app-header>
+<app-header></app-header>
 
 <main class="main">
   <div class="content">
@@ -6,13 +6,7 @@
       <ul class="user-list">
         @for (user of users; track user.id) {
           <li>
-            <app-user
-              [name]="user.name"
-              [avatar]="user.avatar"
-              [id]="user.id"
-              [isSelected]="selectedUser()?.id === user.id"
-              (userClicked)="onUserSelected($event)"
-            ></app-user>
+            <app-user [user]="user" (userClicked)="onUserSelected($event)"></app-user>
           </li>
         }
       </ul>
@@ -21,11 +15,13 @@
       @if (selectedUser() !== null) {
         <app-tasks [userName]="selectedUser()!.name" [userId]="selectedUser()!.id"></app-tasks>
       } @else {
-        <p class="select-user-message">Select a user to view their tasks</p>
+        <p class="select-user-message">Please select a user to view their tasks.</p>
       }
     </div>
   </div>
-</main> -->
+</main>
+
+<!-- <app-add-new-task></app-add-new-task> -->
 
 <!-- <app-signals-demo></app-signals-demo> -->
-<app-game-container></app-game-container>
+<!-- <app-game-container></app-game-container> -->

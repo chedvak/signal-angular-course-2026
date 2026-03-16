@@ -1,5 +1,7 @@
-import { Component, computed, input, output, signal } from '@angular/core';
-import { USERS } from '../fake_users';
+import { Component, computed, input, output } from '@angular/core';
+
+
+
 
 @Component({
   selector: 'app-user',
@@ -7,17 +9,21 @@ import { USERS } from '../fake_users';
   styleUrls: ['./user.css'],
 })
 export class User {
-  name = input.required<string>();
-  avatar = input.required<string>();
-  id = input.required<string>();
-  isSelected = input.required<boolean>();
+  user = input.required<UserObj>()
   userClicked = output<string>();
 
   imgAvatar = computed(() => {
-    return `assets/users/${this.avatar()}`;
+    return `assets/users/${this.user().avatar}`;
   });
 
   onUserClicked(){
-    this.userClicked.emit(this.id());
+    this.userClicked.emit(this.user().id);
   }
+}
+
+
+export type UserObj = {
+  id: string;
+  name: string;
+  avatar: string;
 }

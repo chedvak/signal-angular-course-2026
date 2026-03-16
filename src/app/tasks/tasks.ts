@@ -1,5 +1,5 @@
 import { Component, computed, input, Input, signal } from '@angular/core';
-import { Task } from "./task/task";
+import { Task, TaskObj } from "./task/task";
 import { fakeTasks } from './fake_tasks';
 
 @Component({
@@ -9,21 +9,16 @@ import { fakeTasks } from './fake_tasks';
   imports: [Task]
 })
 export class Tasks {
-userName = input.required<string>();
-userId = input.required<string>();
-taskList = signal(fakeTasks);
 
-usersTask = computed(() => {
-  return this.taskList().filter(t => t.userId === this.userId());
-});
+  userName = input.required<string>();
+  userId = input.required<string>();
 
-  addTask() {
-    console.log('Add task clicked');
-  }
+  taskList = signal<TaskObj[]>(fakeTasks);
 
-  onTaskCompleted(taskId: string) {
-    this.taskList.update(tasks => {
-      return tasks.filter(t => t.id !== taskId);
-    });
-  }
+  usertasks = computed(() =>{
+    return this.taskList().filter((task: TaskObj) => task.userId === this.userId());
+  })
+
+
+  
 }
