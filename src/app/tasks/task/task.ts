@@ -1,13 +1,7 @@
 import { Component, input, output } from '@angular/core';
-import { Task as TaskModel } from '../tasks.model';
+import { TaskObj } from '../tasks.model';
 
-export type TaskObj = {
-  id: string;
-  userId: string;
-  title: string;
-  summary: string;
-  dueDate: string;
-};
+
 
 @Component({
   selector: 'app-task',
@@ -18,5 +12,12 @@ export type TaskObj = {
 export class Task {
 
   task = input.required<TaskObj>();
+
+  taskCompleted = output<string>()
+
+  onClickCompleteTask(){
+   this.taskCompleted.emit(this.task().id)
+  }
+
 
 }

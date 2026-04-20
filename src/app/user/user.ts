@@ -10,6 +10,7 @@ import { Component, computed, input, output } from '@angular/core';
 })
 export class User {
   user = input.required<UserObj>()
+  isSelected = input.required<boolean>();
   userClicked = output<string>();
 
   imgAvatar = computed(() => {

@@ -7,10 +7,11 @@ import { USERS } from './fake_users';
 import { SignalsDemoComponent } from './signals-demo/signals-demo.component';
 import { GameContainer } from './guessTheColor/game-container/game-container';
 import { AddNewTask } from './tasks/add-new-task/add-new-task';
+import { RouterOutlet } from "@angular/router";
 
 @Component({
   selector: 'app-root',
-  imports: [ Header, User, Game, Tasks, SignalsDemoComponent, GameContainer, AddNewTask],
+  imports: [Header, User, Game, Tasks, SignalsDemoComponent, GameContainer, AddNewTask, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

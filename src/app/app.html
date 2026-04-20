@@ -6,7 +6,7 @@
       <ul class="user-list">
         @for (user of users; track user.id) {
           <li>
-            <app-user [user]="user" (userClicked)="onUserSelected($event)"></app-user>
+            <app-user [user]="user" [isSelected]="user.id === selectedUser()?.id" (userClicked)="onUserSelected($event)"></app-user>
           </li>
         }
       </ul>
@@ -25,3 +25,5 @@
 
 <!-- <app-signals-demo></app-signals-demo> -->
 <!-- <app-game-container></app-game-container> -->
+
+<!-- <router-outlet></router-outlet> -->

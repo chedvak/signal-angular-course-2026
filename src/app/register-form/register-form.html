@@ -1,0 +1,72 @@
+<div class="registration-container">
+  <h2>Registration Form</h2>
+  <form [formGroup]="registrationForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" formControlName="name">
+    </div>
+    @if(registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched){
+        @if(registrationForm.get('name')?.errors?.['required']){
+            <div class="error">Name is required.</div>
+        }
+        @if(registrationForm.get('name')?.errors?.['minlength']){
+            <div class="error">Name must be at least 3 characters long.</div>
+        }
+    }
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email">
+    </div>
+    @if(registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched){
+        @if(registrationForm.get('email')?.errors?.['required']){
+            <div class="error">Email is required.</div>
+        }
+        @if(registrationForm.get('email')?.errors?.['email']){
+            <div class="error">Please enter a valid email.</div>
+        }
+    }
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password">
+    </div>
+    @if(registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched){
+        @if(registrationForm.get('password')?.errors?.['required']){
+            <div class="error">Password is required.</div>
+        }
+        @if(registrationForm.get('password')?.errors?.['minlength']){
+            <div class="error">Password must be at least 6 characters long.</div>
+        }
+    }
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" formControlName="confirmPassword">
+    </div>
+    @if(registrationForm.get('confirmPassword')?.invalid && registrationForm.get('confirmPassword')?.touched){
+        @if(registrationForm.get('confirmPassword')?.errors?.['required']){
+            <div class="error">Confirm Password is required.</div>
+        }
+    }
+    @if(registrationForm.errors?.['passwordMismatch'] && registrationForm.get('confirmPassword')?.touched){
+        <div class="error">Passwords do not match.</div>
+    }
+
+    <div class="form-group">
+      <label>Skills</label>
+      <div >
+          <div class="skill-item">
+            <input type="text">
+            <button type="button" >Remove</button>
+          </div>
+      </div>
+      <button type="button">Add Skill</button>
+    
+    </div>
+
+    <div class="actions">
+      <button type="submit">Register</button>
+    </div>
+  </form>
+</div>

@@ -1,22 +1,30 @@
 <div class="backdrop"></div>
 <dialog open>
     <h2>Add Task</h2>
-    <form>
+    <form #addNewTaskForm="ngForm" (ngSubmit)="onSubmit(addNewTaskForm)">
         <p>
             <label for="title">Title</label>
-            <input type="text" id="title" name="title"/>
+            <input type="text" id="title" name="title" [(ngModel)]="title"  [minlength]="5" email #titleInput="ngModel"/>
         </p>
+        @if(titleInput.errors && titleInput.touched){
+            @if(titleInput.errors['minlength']){
+                <p class="error">Title must be at least 5 characters long.</p>
+            }
+            @if(titleInput.errors['email']){
+                <p class="error">Title must be a valid email.</p>
+            }
+        }
         <p>
             <label for="summary">Summary</label>
-            <textarea id="summary" rows="5" name="summary"></textarea>
+            <textarea id="summary" rows="5" name="summary" ngModel></textarea>
         </p>
         <p>
             <label for="due-date">Due Date</label>
-            <input type="date" id="due-date" name="dueDate" />
+            <input type="date" id="due-date" name="dueDate" ngModel />
         </p>
         <p class="actions">
             <button type="button">Cancel</button>
-            <button type="submit">Create</button>
+            <button type="submit" [disabled]="addNewTaskForm.form.invalid">Create</button>
         </p>
     </form>
 </dialog>

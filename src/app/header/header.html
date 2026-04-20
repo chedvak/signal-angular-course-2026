@@ -16,4 +16,12 @@
 			<p class="lead">{{ description }}</p>
 		</div>
 	</div>
+
+	<div class="header-actions">
+		<button class="btn btn-primary" (click)="toggleAddUser()">Add New User</button>
+	</div>
 </header>
+
+@if (showAddUser()) {
+	<app-add-new-user></app-add-new-user>
+}
